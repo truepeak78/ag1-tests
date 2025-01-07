@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
-site_name: BI-AG1
+site_name: BI-AG1 tests
 site_url: https://192.168.0.1/notes
 theme:
     name: material

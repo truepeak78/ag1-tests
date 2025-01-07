@@ -33,6 +33,6 @@ jobs:
       - run: pip install mkdocs-material
 
       - name: Add CNAME for Custom Domain
-        run: echo "skripta.ag1.monster" > docs/CNAME
+        run: echo "tests.ag1.monster" > docs/CNAME
 
       - run: mkdocs gh-deploy --force
