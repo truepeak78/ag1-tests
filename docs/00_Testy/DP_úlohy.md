@@ -98,14 +98,14 @@
             return memo[i]
         ```
 
-        V tomto prípade je celkom intuitívne aj iteratívne riešenie. Pre i-tý prvok nám totiž stačí vedieť hodnoty $memo[i + 1]$ a $memo [i + D]$ (pokiaľ je $i + D < N$). Môžeme teda napĺňať pole odzadu (počítať najlepšie miesta na rezanie odzadu, a potom ich spájať dokopy, vpodstate tak ako pri NRP)
+        V tomto prípade je celkom intuitívne aj iteratívne riešenie. Pre i-tý prvok nám totiž stačí vedieť hodnoty $memo[i + 1]$ a $memo [i + D]$ (pokiaľ je $i + D <= N$). Môžeme teda napĺňať pole odzadu (počítať najlepšie miesta na rezanie odzadu, a potom ich spájať dokopy, vpodstate tak ako pri NRP)
         ```python
         rezanie():
-            memo = pole dlzky n naplnene 0
+            memo = pole dlzky N+1 naplnene 0
             for i = N - 1 ... 0
                 cena = 0
                 if i + 1 < N: cena = memo[i + 1]
-                if i + D < N: cena = max(cena, K - suma(P[i] ... P[i + D - 1]) + memo[i + D])
+                if i + D <= N: cena = max(cena, K - suma(P[i] ... P[i + D - 1]) + memo[i + D])
 
             return cena[0]
         ```
