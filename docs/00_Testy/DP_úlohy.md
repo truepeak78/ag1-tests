@@ -75,9 +75,9 @@
 
         ```python
         rezanie(i):
-            if i == N: return 0 
+            if i + D > N: return 0 
             cena_rezanie = 0
-            if i + D < N: # mozeme rezat iba ak nam zostava > D centimetrov
+            if i + D <= N: # mozeme rezat iba ak nam zostava > D centimetrov
                 cena_rezanie = K - suma(P[i] ... P[i + D - 1]) + rezanie(i + D)
             cena_skip = rezanie(i + 1)
             return max(cena_rezanie, cena_skip)
@@ -88,10 +88,10 @@
         ```python
         memo = pole dlzky N naplnene undef
         rezanie(i):
-            if i == N: return 0 
+            if i + D > N: return 0 
             if memo[i] != undef: return memo[i]
             cena_rezanie = 0
-            if i + D < N: 
+            if i + D <= N: 
                 cena_rezanie = K - suma(P[i] ... P[i + D - 1]) + rezanie(i + D)
             cena_skip = rezanie(i + 1)
             memo[i] = max(cena_rezanie, cena_skip)
