@@ -45,8 +45,8 @@
         ```python
         max_cesta(M,N):
             memo := tabulka N x N naplnena -inf 
-            for i = n - 1 ... 0::
-                for j = in range(N):
+            for i = 0 .. N-1:
+                for j = 0 .. N-1:
                     if i == 0 and j == 0: 
                         memo[i][j] = 0 # "základní krok" (M[0][0] je vždy 0 dle zadání)                        
                     # úlož největší hodnotu
