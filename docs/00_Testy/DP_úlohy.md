@@ -105,9 +105,11 @@
             for i = N - 1 ... 0
                 cena = 0
                 if i + 1 < N: cena = memo[i + 1]
-                if i + D <= N: cena = max(cena, K - suma(P[i] ... P[i + D - 1]) + memo[i + D])
-
-            return cena[0]
+                if i + D <= N: 
+                    cena = max(cena, K - suma(P[i] ... P[i + D - 1]) + memo[i + D])
+                memo[i] = cena
+                
+            return memo[0]
         ```
 
         Vzhľadom na to, že pri každom poli v memoizačnej tabuľke strávime konštantný čas, bude zložitosť záležať iba na veľkosti tabuľky, teda $\mathcal{O}(n)$
