@@ -1,6 +1,8 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 site_name: BI-AG1 tests
-site_url: https://192.168.0.1/notes
+site_url: https://tests.ag1.monster/
+repo_name: truepeak78/ag1-tests
+repo_url: https://github.com/truepeak78/ag1-tests/
 theme:
     name: material
     features:
@@ -62,3 +64,12 @@ extra_javascript:
 
 plugins:
     - search
+
+extra:
+    social:
+          - icon: fontawesome/brands/git-alt
+            link: https://github.com/truepeak78/ag1-tests/
+
+          - icon: material/bug
+            link: https://github.com/truepeak78/ag1-tests/issues/new/
+            name: Report an Issue
