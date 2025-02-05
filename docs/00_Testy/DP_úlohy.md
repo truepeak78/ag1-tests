@@ -7,7 +7,7 @@
 !!! Implication  "Nejdelší cesta v matici"
 
     ### Nejdelší cesta v matici {#implication-dp.1}
-    - Na vstupu je **NxN** matice **Mat**, kde každý prvek má určenou hodnotu. Prvky $Mat[0][0]$ a $Mat[N][N]$ mají hodnotu 0. Zbytek náhodné celočíselné hodoty (záporné, nulové i kladné).
+    - Na vstupu je **NxN** matice **Mat**, kde každý prvek má určenou hodnotu. Prvky $Mat[0][0]$ a $Mat[N-1][N-1]$ mají hodnotu 0. Zbytek náhodné celočíselné hodoty (záporné, nulové i kladné).
     - Navrhněte algoritmus, který nalezne posloupnost prvků začínající na $Mat[0][0]$ a končící na $Mat[N][N]$, kde jejich součet je největší. Napříč maticí se dá pohybovat pouze směrem doprava ($Mat[i][j+1]$) a nebo dolů ($Mat[i+1][j]$).
 
     ??? Proof "Řešení"
@@ -17,19 +17,23 @@
         
         Toto sa rekurzívne dá popísať nasledujúcim pseudokódom:
         ```python
-        longest_path(M, x, y):
-            # Ukoncovacia podmienka
-            if x == n - 1 and y == n - 1:
+        max_cesta(M,N,x,y): 
+            
+            if x+1 > N-1 and y+1 > N-1: # nemůžeme ani doprava ani dolu
                 return 0
+            
+            if x + 1 <= N-1:
+                down_path = max_cesta(M,N,x+1,y) + M[x][y]
+            else:
+                down_path = INT_MIN #musime uložit nějakou hodnotu pro porovnání
+                                    #i v případě, že nemůžeme jít dolu
 
-            right_path, down_path = 0, 0
-            # Kontrolujeme, ci sme in bounds
-            if x + 1 < n:
-                right_path = longest_path(M, x + 1, y)
-            if y + 1 < n:
-                down_path = longest_path(M, x, y + 1)
-
-            return M[x][y] + max(right_path, down_path)
+            if y + 1 <= N-1:
+                right_path = max_cesta(M,N,x,y+1) + M[x][y]
+            else:
+                right_path = INT_MIN #stejně zde
+                
+            return max(down_path,right_path)
         ```
 
         Časová zložitosť takéhoto riešenia bude exponenciálna, vzhľadom na to, že v každom políčku máme dve rozhodnutia. Na memoizáciu by stačilo vytvoriť si maticu, v ktorej si ukladáme už vypočítané dĺžky ciest, aby sme nemuseli rekurziu volať vždy. Kód sa zmení iba tak, že si pridáme memoizačnú tabuľku (memo), a vždy si vypočítanú hodnotu na konci do nej uložíme. Na začiatku funkcie môžeme potom kontrolovať, či už hodnotu vypočítanú nemáme. Toto by vpodstate len znamenalo pridanie `memo[x][y] = M[x][y] + max(right_path, down_path)` na konci funkcie, a `if memo[x][y] != undef: return memo[x][y]` na začiatku.
