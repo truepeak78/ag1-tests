@@ -82,9 +82,9 @@
 
         ```python
         rezanie(i):
-            if i == N: return 0 
+            if i + D > N: return 0 
             cena_rezanie = 0
-            if i + D < N: # mozeme rezat iba ak nam zostava > D centimetrov
+            if i + D <= N: # mozeme rezat iba ak nam zostava > D centimetrov
                 cena_rezanie = K - suma(P[i] ... P[i + D - 1]) + rezanie(i + D)
             cena_skip = rezanie(i + 1)
             return max(cena_rezanie, cena_skip)
@@ -95,26 +95,28 @@
         ```python
         memo = pole dlzky N naplnene undef
         rezanie(i):
-            if i == N: return 0 
+            if i + D > N: return 0 
             if memo[i] != undef: return memo[i]
             cena_rezanie = 0
-            if i + D < N: 
+            if i + D <= N: 
                 cena_rezanie = K - suma(P[i] ... P[i + D - 1]) + rezanie(i + D)
             cena_skip = rezanie(i + 1)
             memo[i] = max(cena_rezanie, cena_skip)
             return memo[i]
         ```
 
-        V tomto prípade je celkom intuitívne aj iteratívne riešenie. Pre i-tý prvok nám totiž stačí vedieť hodnoty $memo[i + 1]$ a $memo [i + D]$ (pokiaľ je $i + D < N$). Môžeme teda napĺňať pole odzadu (počítať najlepšie miesta na rezanie odzadu, a potom ich spájať dokopy, vpodstate tak ako pri NRP)
+        V tomto prípade je celkom intuitívne aj iteratívne riešenie. Pre i-tý prvok nám totiž stačí vedieť hodnoty $memo[i + 1]$ a $memo [i + D]$ (pokiaľ je $i + D <= N$). Môžeme teda napĺňať pole odzadu (počítať najlepšie miesta na rezanie odzadu, a potom ich spájať dokopy, vpodstate tak ako pri NRP)
         ```python
         rezanie():
-            memo = pole dlzky n naplnene 0
+            memo = pole dlzky N+1 naplnene 0
             for i = N - 1 ... 0
                 cena = 0
                 if i + 1 < N: cena = memo[i + 1]
-                if i + D < N: cena = max(cena, K - suma(P[i] ... P[i + D - 1]) + memo[i + D])
-
-            return cena[0]
+                if i + D <= N: 
+                    cena = max(cena, K - suma(P[i] ... P[i + D - 1]) + memo[i + D])
+                memo[i] = cena
+                
+            return memo[0]
         ```
 
         Vzhľadom na to, že pri každom poli v memoizačnej tabuľke strávime konštantný čas, bude zložitosť záležať iba na veľkosti tabuľky, teda $\mathcal{O}(n)$
