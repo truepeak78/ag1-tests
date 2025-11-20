@@ -7,7 +7,7 @@
 !!! Implication  "Nejdelší cesta v matici"
 
     ### Nejdelší cesta v matici {#implication-dp.1}
-    - Na vstupu je **NxN** matice **Mat**, kde každý prvek má určenou hodnotu. Prvky $Mat[0][0]$ a $Mat[N][N]$ mají hodnotu 0. Zbytek náhodné celočíselné hodoty (záporné, nulové i kladné).
+    - Na vstupu je **NxN** matice **Mat**, kde každý prvek má určenou hodnotu. Prvky $Mat[0][0]$ a $Mat[N-1][N-1]$ mají hodnotu 0. Zbytek náhodné celočíselné hodoty (záporné, nulové i kladné).
     - Navrhněte algoritmus, který nalezne posloupnost prvků začínající na $Mat[0][0]$ a končící na $Mat[N][N]$, kde jejich součet je největší. Napříč maticí se dá pohybovat pouze směrem doprava ($Mat[i][j+1]$) a nebo dolů ($Mat[i+1][j]$).
 
     ??? Proof "Řešení"
@@ -17,43 +17,50 @@
         
         Toto sa rekurzívne dá popísať nasledujúcim pseudokódom:
         ```python
-        longest_path(M, x, y):
-            # Ukoncovacia podmienka
-            if x == n - 1 and y == n - 1:
+        max_cesta(M,N,x,y): 
+            
+            if x+1 > N-1 and y+1 > N-1: # nemůžeme ani doprava ani dolu
                 return 0
+            
+            if x + 1 <= N-1:
+                down_path = max_cesta(M,N,x+1,y) + M[x][y]
+            else:
+                down_path = INT_MIN #musime uložit nějakou hodnotu pro porovnání
+                                    #i v případě, že nemůžeme jít dolu
 
-            right_path, down_path = 0, 0
-            # Kontrolujeme, ci sme in bounds
-            if x + 1 < n:
-                right_path = longest_path(M, x + 1, y)
-            if y + 1 < n:
-                down_path = longest_path(M, x, y + 1)
-
-            return M[x][y] + max(right_path, down_path)
+            if y + 1 <= N-1:
+                right_path = max_cesta(M,N,x,y+1) + M[x][y]
+            else:
+                right_path = INT_MIN #stejně zde
+                
+            return max(down_path,right_path)
         ```
 
-        Časová zložitosť takéhoto riešenia bude exponenciálna, vzhľadom na to, že v každom políčku máme dve rozhodnutia. Na memoizáciu by stačilo vytvoriť si maticu, v ktorej si ukladáme už vypočítané dĺžky ciest, aby sme nemuseli rekurziu volať vždy. Kód sa zmení iba tak, že si pridáme memoizačnú tabuľku (memo), a vždy si vypočítanú hodnotu na konci do nej uložíme. Na začiatku funkcie môžeme potom kontrolovať, či už hodnotu vypočítanú nemáme. Toto by vpodstate len znamenalo pridanie `memo[x][y] = M[x][y] + max(right_path, down_path)` na konci funkcie, a `if memo[x][y] != undef: return memo[x][y]` na začiatku.
-        
+        Časová složitost takového řešení bude exponenciální, protože v každém políčku máme dvě možnosti rozhodnutí. 
         <br />
-        Dôkaz korektnosti by sa dal robiť indukciou od pravého dolného políčka memoizačnej tabuľky. Vieme ze toto pole je vyplnené správne (má hodnotu 0). Pre hocijaké pole inde v memoizačnej tabuľke potrebujeme, aby bolo vyplnené pole vpravo a dole, čo už buď platí, alebo sa rekurzívne vyplní. Hodnotu v danom poli v memoizačnej tabuľke potom vypočítame ako `M[x][y] + max(memo[x + 1][y], memo[x][y + 1])`, čo ale bude najväčšia suma cesty od políčka $x, y$. 
-
-        *Túto logiku je možno vidno viac v iteratívnom riešení, ktoré postupne napĺňa memoizačnú tabuľku od políčka n, n:*
+        Pro memoizaci stačí vytvořit 2D tabulku, do které budeme ukládat maximální délky cest. memo[i][j] reprezentuje délku nejdelší cesty z [0][0] do [i][j]. Kód se změní pouze tak, že přidáme memoizační tabulku (memo), která bude inicializována hodnotami -nekonečno. Postupně od [0][0] projdeme tabulku směrem shora dolů a zleva doprava. Pokud najdeme cestu do buňky [i][j], jejíž délka je větší než již uložená hodnota v memo[i][j], nastavíme hodnotu memo[i][j] na nově nalezenou hodnotu.
+        <br />
+        Důkaz správnosti by se dal provádět indukcí od levého horního políčka memoizační tabulky. Víme, že toto pole je vyplněné správně (má hodnotu 0). Pro jakékoli pole jinde v memoizační tabulce potřebujeme, aby bylo vyplněné pole nad ním nebo vlevo od něj, což už buď platí, nebo se rekurzivně vyplní. Hodnotu v daném poli v memoizační tabulce potom vypočítáme jako max(M[x-1][y] + memo[x - 1][y], M[x][y-1] + memo[x][y - 1]), což ale bude největší suma cesty od políčka [0][0] do políčka [N-1][N-1], díky tomu, že se do každého políčka [x][y] můžeme dostat poze z buněk [x-1][y] nebo [x][y - 1].
 
         ```python
-        max_cesta():
-            memo := tabulka n x n naplnena 0
-            for i = n - 1 ... 0:
-                for j = n - 1 ... 0:
-                    m = 0
-                    # vyber vacsie policko z toho lavo/dole
-                    if i + 1 < n: m = max(m, memo[i + 1][j])
-                    if j + 1 < n: m = max(m, memo[i][j + 1])
-                    memo[i][j] = M[i][j] + m
-            return memo[0][0]
+        max_cesta(M,N):
+            memo := tabulka N x N naplnena -inf 
+            for i = 0 .. N-1:
+                for j = 0 .. N-1:
+                    if i == 0 and j == 0: 
+                        memo[i][j] = 0 # "základní krok" (M[0][0] je vždy 0 dle zadání)                        
+                    # úlož největší hodnotu
+                    if i + 1 < N: 
+                        memo[i+1][j] = max(memo[i][j] + M[i][j], memo[i+1][j])
+                    if j + 1 < N: 
+                        memo[i][j+1] = max(memo[i][j] + M[i][j], memo[i][j+1])
+                    
+            return memo[N-1][N-1]
         ```
 
         <br />
-        Časová zložitosť závisí na veľkosti memoizačnej tabuľky, keďže pre každé políčko robíme iba konštantý počet operácií. Teda v tomto prípade $\mathcal{O}(n^2)$.
+        Časová složitost tohoto řešení je $\mathcal{O}(N^2)$, protože uvnitř cyklů máme vždy konstantní počet kroků.
+        Prostorová složitost je $\mathcal{O}(N^2)$
 
 
 <a id="implication-dp.2"></a>
