@@ -1,0 +1,1186 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://tests.ag1.monster/00_Testy/DP_%C3%BAlohy/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../Finty/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>DP úlohy - BI-AG1 tests</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M13%2014h-2V9h2m0%209h-2v-2h2M1%2021h22L12%202z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="4051B5" data-md-color-accent="4051B5">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#implication-dp.1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="BI-AG1 tests" class="md-header__button md-logo" aria-label="BI-AG1 tests" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BI-AG1 tests
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DP úlohy
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="4051B5" data-md-color-accent="4051B5"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/truepeak78/ag1-tests/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    truepeak78/ag1-tests
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="BI-AG1 tests" class="md-nav__button md-logo" aria-label="BI-AG1 tests" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    BI-AG1 tests
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/truepeak78/ag1-tests/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    truepeak78/ag1-tests
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    00 Testy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    00 Testy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP úlohy
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DP úlohy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implication-dp.1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nejdelší cesta v matici
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implication-dp.2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kuchyňská prkýnka
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implication-dp.3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Převoz piva
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implication-dp.4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Převleky oblečení
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implication-dp.5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kabely
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Finty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Finty
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Zkou%C5%A1ka/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zkouška
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Z%C3%A1po%C4%8Det/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zápočet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implication-dp.1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nejdelší cesta v matici
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implication-dp.2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kuchyňská prkýnka
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implication-dp.3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Převoz piva
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implication-dp.4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Převleky oblečení
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implication-dp.5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kabely
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>DP úlohy</h1>
+
+<p><a id="implication-dp.1"></a></p>
+<div class="admonition warning">
+<p class="admonition-title">Poznámka k riešeniam</p>
+<p>Riešenia sú work in progress, mali by byť správne (väčšina je otestovaná v pythone), pokiaľ sa vám niečo nezdá, môžete dať vedieť. Chcel som ich sem ale dať, aby aj skoršie termíny mali aspoň nejaké myšlienky, ako úlohy riešiť.</p>
+</div>
+<div class="admonition implication">
+<p class="admonition-title">Nejdelší cesta v matici</p>
+<h3 id="implication-dp.1">Nejdelší cesta v matici</h3>
+<ul>
+<li>Na vstupu je <strong>NxN</strong> matice <strong>Mat</strong>, kde každý prvek má určenou hodnotu. Prvky <span class="arithmatex">\(Mat[0][0]\)</span> a <span class="arithmatex">\(Mat[N-1][N-1]\)</span> mají hodnotu 0. Zbytek náhodné celočíselné hodoty (záporné, nulové i kladné).</li>
+<li>Navrhněte algoritmus, který nalezne posloupnost prvků začínající na <span class="arithmatex">\(Mat[0][0]\)</span> a končící na <span class="arithmatex">\(Mat[N][N]\)</span>, kde jejich součet je největší. Napříč maticí se dá pohybovat pouze směrem doprava (<span class="arithmatex">\(Mat[i][j+1]\)</span>) a nebo dolů (<span class="arithmatex">\(Mat[i+1][j]\)</span>).</li>
+</ul>
+<details class="proof">
+<summary>Řešení</summary>
+<p>Ak sa nachádzame na ľubovoľnom políčku <span class="arithmatex">\(x, y\)</span>, vieme, že cesta s najväčším súčtom z tohto políčka buď musí pokračovať o políčko doprava (<span class="arithmatex">\(Mat[y][x + 1]\)</span>), alebo o políčko dole (<span class="arithmatex">\(Mat[y + 1][x]\)</span>). Jedna z týchto ciest môže mať väčší súčet, vyberieme si teda tú. Celkový súčet hodnôt na ceste, ktorá nám takto vznikne, bude teda:</p>
+<div class="arithmatex">\[h(x, y) = Mat[x][y] + max(h(x + 1, y), h(x, y + 1))\]</div>
+<p>Toto sa rekurzívne dá popísať nasledujúcim pseudokódom:
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">max_cesta</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span> 
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>    <span class="k">if</span> <span class="n">x</span><span class="o">+</span><span class="mi">1</span> <span class="o">&gt;</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">y</span><span class="o">+</span><span class="mi">1</span> <span class="o">&gt;</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="c1"># nemůžeme ani doprava ani dolu</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>        <span class="k">return</span> <span class="mi">0</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>        <span class="n">down_path</span> <span class="o">=</span> <span class="n">max_cesta</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">M</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>        <span class="n">down_path</span> <span class="o">=</span> <span class="n">INT_MIN</span> <span class="c1">#musime uložit nějakou hodnotu pro porovnání</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>                            <span class="c1">#i v případě, že nemůžeme jít dolu</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a>    <span class="k">if</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a>        <span class="n">right_path</span> <span class="o">=</span> <span class="n">max_cesta</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">M</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a>        <span class="n">right_path</span> <span class="o">=</span> <span class="n">INT_MIN</span> <span class="c1">#stejně zde</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a>    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">down_path</span><span class="p">,</span><span class="n">right_path</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>Časová složitost takového řešení bude exponenciální, protože v každém políčku máme dvě možnosti rozhodnutí. 
+<br />
+Pro memoizaci stačí vytvořit 2D tabulku, do které budeme ukládat maximální délky cest. memo[i][j] reprezentuje délku nejdelší cesty z [0][0] do [i][j]. Kód se změní pouze tak, že přidáme memoizační tabulku (memo), která bude inicializována hodnotami -nekonečno. Postupně od [0][0] projdeme tabulku směrem shora dolů a zleva doprava. Pokud najdeme cestu do buňky [i][j], jejíž délka je větší než již uložená hodnota v memo[i][j], nastavíme hodnotu memo[i][j] na nově nalezenou hodnotu.
+<br />
+Důkaz správnosti by se dal provádět indukcí od levého horního políčka memoizační tabulky. Víme, že toto pole je vyplněné správně (má hodnotu 0). Pro jakékoli pole jinde v memoizační tabulce potřebujeme, aby bylo vyplněné pole nad ním nebo vlevo od něj, což už buď platí, nebo se rekurzivně vyplní. Hodnotu v daném poli v memoizační tabulce potom vypočítáme jako max(M[x-1][y] + memo[x - 1][y], M[x][y-1] + memo[x][y - 1]), což ale bude největší suma cesty od políčka [0][0] do políčka [N-1][N-1], díky tomu, že se do každého políčka [x][y] můžeme dostat poze z buněk [x-1][y] nebo [x][y - 1].</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">max_cesta</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="n">memo</span> <span class="o">:=</span> <span class="n">tabulka</span> <span class="n">N</span> <span class="n">x</span> <span class="n">N</span> <span class="n">naplnena</span> <span class="o">-</span><span class="n">inf</span> 
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>    <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">..</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a>        <span class="k">for</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">..</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a>            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> 
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a>                <span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># &quot;základní krok&quot; (M[0][0] je vždy 0 dle zadání)                        </span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a>            <span class="c1"># úlož největší hodnotu</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a>            <span class="k">if</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">:</span> 
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a>                <span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a>            <span class="k">if</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">:</span> 
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a>                <span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a>    <span class="k">return</span> <span class="n">memo</span><span class="p">[</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></code></pre></div></td></tr></table></div>
+<p><br />
+Časová složitost tohoto řešení je <span class="arithmatex">\(\mathcal{O}(N^2)\)</span>, protože uvnitř cyklů máme vždy konstantní počet kroků.
+Prostorová složitost je <span class="arithmatex">\(\mathcal{O}(N^2)\)</span></p>
+</details>
+</div>
+<p><a id="implication-dp.2"></a></p>
+<div class="admonition implication">
+<p class="admonition-title">Kuchyňská prkýnka</p>
+<h3 id="implication-dp.2">Kuchyňská prkýnka</h3>
+<p><img align="center" alt="Zadání" src="../../assets/exams/pohadka1.png" /></p>
+<details class="proof">
+<summary>Řešení</summary>
+<p>Problém treba, ako skoro vždy v DP, preformulovať na rozhodnutia, ktoré môžeme v nejakom n-tom centimetri prkna spraviť. Buď môžeme v n-tom centimetri začať rezať prkno, alebo môžeme tento centimeter vynechať, a pokračovať pozretím sa na <span class="arithmatex">\(n + 1\)</span> centimeter. </p>
+<p><br/>
+Označme si <span class="arithmatex">\(T(n)\)</span> sumu, ktorú môžeme od n-tého centimetra získať. V prípade, že v n-tom centimetri začneme rezať, bude sa cena rovnať:</p>
+<div class="arithmatex">\[T(n) = K - P[n] - P[n + 1] - P[n+2] ... - P[n + D - 1] + T(n + D)\]</div>
+<p>teda cene jedného prkienka, mínus ceny opráv daných centimetrov, plus cena prkienok ktoré vieme vytvoriť od <span class="arithmatex">\((n + D)\)</span>-tého centimetra. Ako však už bolo spomenuté, daný centimeter môžeme aj vynechať, teda cena by bola <span class="arithmatex">\(T(n) = T(n + 1)\)</span>. Keďže máme dve možnosti, budeme si opäť vyberať tú, ktorá vedie k maximálnej cene:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">rezanie</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="k">if</span> <span class="n">i</span> <span class="o">+</span> <span class="n">D</span> <span class="o">&gt;</span> <span class="n">N</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span> 
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>    <span class="n">cena_rezanie</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a>    <span class="k">if</span> <span class="n">i</span> <span class="o">+</span> <span class="n">D</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="p">:</span> <span class="c1"># mozeme rezat iba ak nam zostava &gt; D centimetrov</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a>        <span class="n">cena_rezanie</span> <span class="o">=</span> <span class="n">K</span> <span class="o">-</span> <span class="n">suma</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">...</span> <span class="n">P</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">D</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">rezanie</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">D</span><span class="p">)</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a>    <span class="n">cena_skip</span> <span class="o">=</span> <span class="n">rezanie</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a>    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">cena_rezanie</span><span class="p">,</span> <span class="n">cena_skip</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Memoizovalo by sa do 1D pola, ktoré by sme postupne napĺňali maximálnou cenou, ktorú môžeme od i-tého centimetra získať. </p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">memo</span> <span class="o">=</span> <span class="n">pole</span> <span class="n">dlzky</span> <span class="n">N</span> <span class="n">naplnene</span> <span class="n">undef</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">rezanie</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>    <span class="k">if</span> <span class="n">i</span> <span class="o">+</span> <span class="n">D</span> <span class="o">&gt;</span> <span class="n">N</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span> 
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a>    <span class="k">if</span> <span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">undef</span><span class="p">:</span> <span class="k">return</span> <span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a>    <span class="n">cena_rezanie</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a>    <span class="k">if</span> <span class="n">i</span> <span class="o">+</span> <span class="n">D</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="p">:</span> 
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a>        <span class="n">cena_rezanie</span> <span class="o">=</span> <span class="n">K</span> <span class="o">-</span> <span class="n">suma</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">...</span> <span class="n">P</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">D</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">rezanie</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">D</span><span class="p">)</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a>    <span class="n">cena_skip</span> <span class="o">=</span> <span class="n">rezanie</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a>    <span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">cena_rezanie</span><span class="p">,</span> <span class="n">cena_skip</span><span class="p">)</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a>    <span class="k">return</span> <span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></code></pre></div></td></tr></table></div>
+<p>V tomto prípade je celkom intuitívne aj iteratívne riešenie. Pre i-tý prvok nám totiž stačí vedieť hodnoty <span class="arithmatex">\(memo[i + 1]\)</span> a <span class="arithmatex">\(memo [i + D]\)</span> (pokiaľ je <span class="arithmatex">\(i + D &lt;= N\)</span>). Môžeme teda napĺňať pole odzadu (počítať najlepšie miesta na rezanie odzadu, a potom ich spájať dokopy, vpodstate tak ako pri NRP)
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">rezanie</span><span class="p">():</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="n">memo</span> <span class="o">=</span> <span class="n">pole</span> <span class="n">dlzky</span> <span class="n">N</span><span class="o">+</span><span class="mi">1</span> <span class="n">naplnene</span> <span class="mi">0</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a>    <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="n">N</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">...</span> <span class="mi">0</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a>        <span class="n">cena</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a>        <span class="k">if</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">:</span> <span class="n">cena</span> <span class="o">=</span> <span class="n">memo</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a>        <span class="k">if</span> <span class="n">i</span> <span class="o">+</span> <span class="n">D</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="p">:</span> 
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a>            <span class="n">cena</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">cena</span><span class="p">,</span> <span class="n">K</span> <span class="o">-</span> <span class="n">suma</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">...</span> <span class="n">P</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">D</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">memo</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">D</span><span class="p">])</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a>        <span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">cena</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a>    <span class="k">return</span> <span class="n">memo</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>Vzhľadom na to, že pri každom poli v memoizačnej tabuľke strávime konštantný čas, bude zložitosť záležať iba na veľkosti tabuľky, teda <span class="arithmatex">\(\mathcal{O}(n)\)</span></p>
+</details>
+</div>
+<p><a id="implication-dp.3"></a></p>
+<div class="admonition implication">
+<p class="admonition-title">Převoz piva</p>
+<h3 id="implication-dp.3">Převoz piva</h3>
+<p>Pepa převáží pivo ve městě. Všechny domy jsou na jedné přímce. Každý dům má označeno kolik si objednal piva a kde sa nachádzí v jednoprvkové souřadnici. Vozík váží ~ 20 piv, při pohybu k domu se počítá celková únava podle: celková váha <span class="arithmatex">\(\times\)</span> ušlá vzdálenost. Ze startu (pozícia pivovaru je zadaná) má vždy ve vozíku všechny potřebná piva (nemusí se tedy řešit, že vezme prvně pár piv a pak se bude vracet pro další). Při návštěvě domu vyloží všechna potřebná piva. Je třeba najít posloupnost návštěv domů tak, aby celková únava byla nejmenší. Pepa se zároveň musí vrátit zpátky do pivovaru.</p>
+<details class="proof">
+<summary>Hint</summary>
+<p>V každom momente sa stačí pozerať na najbližší pravý a ľavý dom.</p>
+</details>
+<details class="proof">
+<summary>Řešení</summary>
+<p>Dôležité je si uvedomiť, že kedykoľvek prejdeme okolo domu, chceme vyhodiť pivá, ktoré daný dom chce (pretože načo ich budeme ďalej vláčiť, minieme len viac energie). Problém sa teda transformoval na binárne rozhodnutie. Pôjdeme najprv do domu ktorý je nám najbližšie naľavo, alebo napravo? V danom dome pivá vyhodíme, a pýtame sa rovnakú otázku. </p>
+<p><br/>
+Pre lepšiu predstavu sem dávam pseudokód rekurzívneho riešenia, je to už ale dlhšie:
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#__codelineno-5-15">15</a></span>
+<span class="normal"><a href="#__codelineno-5-16">16</a></span>
+<span class="normal"><a href="#__codelineno-5-17">17</a></span>
+<span class="normal"><a href="#__codelineno-5-18">18</a></span>
+<span class="normal"><a href="#__codelineno-5-19">19</a></span>
+<span class="normal"><a href="#__codelineno-5-20">20</a></span>
+<span class="normal"><a href="#__codelineno-5-21">21</a></span>
+<span class="normal"><a href="#__codelineno-5-22">22</a></span>
+<span class="normal"><a href="#__codelineno-5-23">23</a></span>
+<span class="normal"><a href="#__codelineno-5-24">24</a></span>
+<span class="normal"><a href="#__codelineno-5-25">25</a></span>
+<span class="normal"><a href="#__codelineno-5-26">26</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="n">H</span> <span class="o">:=</span> <span class="n">pole</span> <span class="n">pozicii</span> <span class="n">domov</span> <span class="c1"># zoradene !!!</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="n">C</span> <span class="o">:=</span> <span class="n">pole</span> <span class="n">počtu</span> <span class="n">piv</span><span class="p">,</span> <span class="n">ktore</span> <span class="n">i</span><span class="o">-</span><span class="n">ty</span> <span class="n">dom</span> <span class="n">chce</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="n">beerstuff</span><span class="p">(</span><span class="n">closest_left</span><span class="p">,</span> <span class="n">closest_right</span><span class="p">,</span> <span class="n">our_position</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a>    <span class="c1"># closest_left a closest_right su indexy domov, ktore su nam najblizsie vlavo a vpravo</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a>    <span class="c1"># akonahle nejaky dom prejdeme, napriklad vlavo, mozeme dat closest_left--, a vpodstate sa tvarit, ze closest_left uz neexistuje.</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a>    <span class="c1"># musime vsak pritom posunut our_position na H[closest_left]</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a>    <span class="k">if</span> <span class="n">closest_left</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">closest_right</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span> <span class="c1"># presli sme vsetky domy</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10"></a>        <span class="k">return</span> <span class="p">(</span><span class="n">starting_position</span> <span class="o">-</span> <span class="n">our_position</span><span class="p">)</span> <span class="o">*</span> <span class="n">weight</span> <span class="c1"># musime sa vratit na start</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11"></a>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12"></a>    <span class="n">left_cost</span> <span class="o">=</span> <span class="n">inf</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13"></a>    <span class="c1"># ak mozme ist dolava</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14"></a>    <span class="k">if</span> <span class="n">closest_left</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span> 
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15"></a>        <span class="n">left_cost</span> <span class="o">=</span> <span class="p">(</span><span class="n">our_position</span> <span class="o">-</span> <span class="n">H</span><span class="p">[</span><span class="n">closest_left</span><span class="p">])</span> <span class="o">*</span> <span class="n">weight</span> <span class="o">+</span> <span class="n">beerstuff</span><span class="p">(</span><span class="n">closest_left</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">closest_right</span><span class="p">,</span> <span class="n">H</span><span class="p">[</span><span class="n">closest_left</span><span class="p">],</span> <span class="n">weight</span> <span class="o">-</span> <span class="n">C</span><span class="p">[</span><span class="n">closest_left</span><span class="p">])</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16"></a>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17"></a>    <span class="n">right_cost</span> <span class="o">=</span> <span class="n">inf</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18"></a>    <span class="k">if</span> <span class="n">closest_right</span> <span class="o">!=</span> <span class="n">n</span><span class="p">:</span> 
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19"></a>        <span class="n">right_cost</span> <span class="o">=</span> <span class="p">(</span><span class="n">H</span><span class="p">[</span><span class="n">closest_right</span><span class="p">]</span> <span class="o">-</span> <span class="n">our_position</span><span class="p">)</span> <span class="o">*</span> <span class="n">weight</span> <span class="o">+</span> <span class="n">beerstuff</span><span class="p">(</span><span class="n">closest_left</span><span class="p">,</span> <span class="n">closest_right</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">H</span><span class="p">[</span><span class="n">closest_right</span><span class="p">],</span> <span class="n">weight</span> <span class="o">-</span> <span class="n">C</span><span class="p">[</span><span class="n">closest_right</span><span class="p">])</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20"></a>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21"></a>    <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">left_cost</span><span class="p">,</span> <span class="n">right_cost</span><span class="p">)</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22"></a>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23"></a><span class="n">find_cheapest</span><span class="p">(</span><span class="n">starting_position</span><span class="p">):</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24"></a>    <span class="n">left</span> <span class="o">:=</span> <span class="n">find</span> <span class="n">index</span> <span class="n">of</span> <span class="n">closest</span> <span class="n">house</span> <span class="n">to</span> <span class="n">the</span> <span class="n">left</span> <span class="n">of</span> <span class="n">starting_position</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25"></a>    <span class="n">right</span> <span class="o">:=</span> <span class="n">find</span> <span class="n">index</span> <span class="n">of</span> <span class="n">closest</span> <span class="n">house</span> <span class="n">to</span> <span class="n">the</span> <span class="n">right</span> <span class="n">of</span> <span class="n">starting</span> <span class="n">position</span>
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26"></a>    <span class="k">return</span> <span class="n">beerstuff</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">starting_position</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="o">+</span> <span class="mi">20</span><span class="p">)</span> <span class="c1"># + 20 pre vahu vozika</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>Memoizácia by tu už bola trochu komplikovanejšia. Potrebovali by sme memoizačnú tabuľku veľkosti <span class="arithmatex">\(n \times n \times 2\)</span>, pre všetky kombinácie closest_left, closest_right a our_position. Pre our_position naozaj potrebujeme iba 2 prípady, buď začíname v closest_left alebo closest_right (rekurzívne volania budú vždy z pozície nejakého domu, konkrétne closest_left alebo closest_right, pozri pseudokód). Pri vyťahovaní vzdialenosti z memoizačnej tabuľky by sme potom potrebovali niečo ako:
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">if</span> <span class="n">memo</span><span class="p">[</span><span class="n">closest_left</span><span class="p">][</span><span class="n">closest_right</span><span class="p">]</span> <span class="o">!=</span> <span class="n">undef</span><span class="p">:</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a>    <span class="n">go_left_cost</span> <span class="o">=</span> <span class="n">weight</span> <span class="o">*</span> <span class="p">(</span><span class="n">our_position</span> <span class="o">-</span> <span class="n">H</span><span class="p">[</span><span class="n">closest_left</span><span class="p">])</span> <span class="o">+</span> <span class="n">memo</span><span class="p">[</span><span class="n">closest_left</span><span class="p">][</span><span class="n">closest_right</span><span class="p">][</span><span class="n">LEFT</span><span class="p">]</span> 
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a>    <span class="n">go_right_cost</span> <span class="o">=</span> <span class="n">weight</span> <span class="o">*</span> <span class="p">(</span><span class="n">H</span><span class="p">[</span><span class="n">closest_right</span><span class="p">]</span> <span class="o">-</span> <span class="n">our_position</span><span class="p">)</span> <span class="o">+</span> <span class="n">memo</span><span class="p">[</span><span class="n">closest_left</span><span class="p">][</span><span class="n">closest_right</span><span class="p">][</span><span class="n">RIGHT</span><span class="p">]</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a>    <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">go_left_cost</span><span class="p">,</span> <span class="n">go_right_cost</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>Počítame teda koľko nás stojí dostať sa do ľavého/pravého domu + koľko sa unavíme odtiaľ. Pre každé políčko v memoizačnej tabuľke však stále robíme iba konštantý počet operácií, a tabuľka je rádovo veľkosti <span class="arithmatex">\(n^2\)</span>, dostávame časovú zložitosť <span class="arithmatex">\(\mathcal{O}(n^2)\)</span>.</p>
+</details>
+</div>
+<p><a id="implication-dp.4"></a></p>
+<div class="admonition implication">
+<p class="admonition-title">Převleky oblečení</p>
+<h3 id="implication-dp.4">Převleky oblečení</h3>
+<blockquote>
+<p>OCR Tohle fakt nepřečetlo</p>
+</blockquote>
+<p><img align="center" alt="Zadání" src="../../assets/exams/policisti_prevleky.jpeg" /></p>
+<details class="proof">
+<summary>Řešení</summary>
+<blockquote>
+<p>Na konci načrtnem aj myšlienku vracanie priradenia prevlekov, niekedy to v zadaní chcú.</p>
+</blockquote>
+<p><br/>
+Budeme postupovať podobne ako u prkien, len s dvoma polami. Najprv si zoradíme policajtov a prevleky podľa veľkosti, od najmenších po najväčších. Následne budeme prechádzať policajtov zľava doprava, a buď im prevlek <span class="arithmatex">\(q\)</span> priradíme, alebo nie. V pseudokóde asi takto:
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span>
+<span class="normal"><a href="#__codelineno-7-13">13</a></span>
+<span class="normal"><a href="#__codelineno-7-14">14</a></span>
+<span class="normal"><a href="#__codelineno-7-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="n">Policajti</span> <span class="o">:=</span> <span class="n">pole</span> <span class="n">velkosti</span> <span class="n">policajtov</span><span class="p">,</span> <span class="n">zoradene</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="n">Prevleky</span> <span class="o">:=</span> <span class="n">pole</span> <span class="n">velkosti</span> <span class="n">prevlekov</span><span class="p">,</span> <span class="n">zoradene</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="n">prirad_prevlek</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">):</span> <span class="c1"># kde p je index policajta, q index prevleku</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a>    <span class="k">if</span> <span class="n">p</span> <span class="o">==</span> <span class="n">Policajti</span><span class="o">.</span><span class="n">length</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a>    <span class="k">if</span> <span class="n">q</span> <span class="o">==</span> <span class="n">Prevleky</span><span class="o">.</span><span class="n">length</span><span class="p">:</span> <span class="k">return</span> <span class="o">+</span><span class="n">inf</span> <span class="c1"># niekto nema prevlek</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a>    <span class="c1"># ak nedame policajtovi p prevlek q, pozerame sa na q + 1.</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a>    <span class="n">napadnost_skip</span> <span class="o">=</span> <span class="n">prirad_prevlek</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a>    <span class="n">napadnost_noskip</span> <span class="o">=</span> <span class="n">prirad_prevlek</span><span class="p">(</span><span class="n">p</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">q</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># dame policajtovi p prevlek q</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">Prevleky</span><span class="p">[</span><span class="n">q</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">Policajti</span><span class="p">[</span><span class="n">p</span><span class="p">]):</span> <span class="n">napadnost_noskip</span> <span class="o">+=</span> <span class="p">(</span><span class="n">Prevleky</span><span class="p">[</span><span class="n">q</span><span class="p">]</span> <span class="o">-</span> <span class="n">Policajti</span><span class="p">[</span><span class="n">p</span><span class="p">])</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">Prevleky</span><span class="p">[</span><span class="n">q</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">Policajti</span><span class="p">[</span><span class="n">p</span><span class="p">]):</span> <span class="n">napadnost_noskip</span> <span class="o">+=</span> <span class="p">(</span><span class="n">Policajti</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">-</span> <span class="n">Prevleky</span><span class="p">[</span><span class="n">q</span><span class="p">])</span><span class="o">^</span><span class="mi">2</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14"></a>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15"></a>    <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">napadnost_noskip</span><span class="p">,</span> <span class="n">napadnost_skip</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>Možno je tu dôležité vysvetliť, prečo môžeme prechádzať polia zľava doprava, a nemusíme skúsiť každý policajt s každým prevlekom. Intuitívne to akosi dáva zmysel, myslím, že by tu stačil argument typu: Ak máme nejakého policajta <span class="arithmatex">\(V[i]\)</span>, a nejaký prevlek <span class="arithmatex">\(P[j]\)</span>, tak buď platí:</p>
+<ol>
+<li><span class="arithmatex">\(V[i] &gt; P[j]\)</span> - vieme z kódu, že máme možnost preskakovať obleky. Povedzme, že existuje nejaký index <span class="arithmatex">\(k\)</span>, keď prvý krát od ľava je <span class="arithmatex">\(V[i] &lt; P[k]\)</span>. Od indexov <span class="arithmatex">\(j\)</span> do <span class="arithmatex">\(k\)</span> však musí nápadnosť klesať (blížime sa k nulovému rozdielu). Od <span class="arithmatex">\(j\)</span>-tého do <span class="arithmatex">\(k\)</span>-tého indexu sa teda nachádza najoptimálnejší prevlek pre daného policajta, a ten rekurzívnym sledom skipov aj vyskúšame.</li>
+<li><span class="arithmatex">\(V[j] &lt; P[j]\)</span> - na druhej strane, ak nám nastane toto aj v prípade keď sme žiadne obleky nepreskočili, vieme, že preskočením obleku, teda dostaním sa na nejaký index <span class="arithmatex">\(k &gt; j\)</span> len nápadnosť zvýšime. V kóde však skúsime aj možnosť priradiť tento oblek danému policajtovi, teda skúšame aj minimálny.</li>
+</ol>
+<p>Memoizácia tohto príkladu vyžaduje vytvorenie tabuľky veľkosti <span class="arithmatex">\(|V| \times |P|\)</span>. Pre každý index <span class="arithmatex">\(p, q\)</span>  si budeme pamätať minimálnu nespokojnosť ak priradíme <span class="arithmatex">\(p\)</span>-tému policajtovi prevlek <span class="arithmatex">\(q\)</span>. V každom rekurzívnom volaní sa opäť volá konštantný počet operácií, opäť teda časová zložitosť <span class="arithmatex">\(\mathcal{O}(|V| \times |P|) = \mathcal{O}(n^2)\)</span>.</p>
+<p><br/>
+Vracať prevleky by bolo v rekurzívnom riešení asi treba tak, že si postupne prebubleme rekurzívnymi volaniami nejaké pole, do ktorého si použité prevleky zapisujeme. V iteratívnom riešení by to však išlo jednoduchšie, a myslím si, že aspoň myšlienka je zaujímavá. Tabuľku by sme mohli napríklad vypĺňať od posledného policajta a prevleku, a v poslednom stĺpci memoizačnej tabuľky budeme teda mať nápadnosť posledného policajta <span class="arithmatex">\(p\)</span>, ak mu priradíme prevlek <span class="arithmatex">\(q\)</span>. Pre ďaľšieho policajta odzadu minimalizujeme teda jeho vlastnú nápadnosť pre prevlek <span class="arithmatex">\(q\)</span> + minimálnu nápadnosť ďalšieho policajta, ktorý si vyberá z prevlekov <span class="arithmatex">\(q + 1\)</span> až <span class="arithmatex">\(|P|\)</span>. Pre predstavu for loop:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span>
+<span class="normal"><a href="#__codelineno-8-6">6</a></span>
+<span class="normal"><a href="#__codelineno-8-7">7</a></span>
+<span class="normal"><a href="#__codelineno-8-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">for</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Policajti</span><span class="o">.</span><span class="n">length</span> <span class="o">...</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a>    <span class="k">for</span> <span class="n">q</span> <span class="o">=</span> <span class="n">Prevleky</span><span class="o">.</span><span class="n">length</span> <span class="o">...</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a>        <span class="k">if</span> <span class="n">p</span> <span class="o">==</span> <span class="n">Policajti</span><span class="o">.</span><span class="n">length</span><span class="p">:</span> <span class="n">memo</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="n">q</span><span class="p">]</span> <span class="o">=</span> <span class="n">vypocitaj</span> <span class="n">napadnost</span> <span class="n">policajta</span> <span class="n">Policajt</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="n">s</span> <span class="n">prevlekom</span> <span class="n">Prevlek</span><span class="p">[</span><span class="n">q</span><span class="p">]</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a>        <span class="n">min_napadnost_dalsieho</span> <span class="o">=</span> <span class="n">inf</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a>        <span class="k">for</span> <span class="n">k</span> <span class="o">=</span> <span class="n">q</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">...</span> <span class="n">Prevleky</span><span class="o">.</span><span class="n">length</span> <span class="c1"># dalsiemu policajtovi mozeme priradit az q + 1. prevlek</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a>            <span class="n">min_napadnost_dalsieho</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">min_napadnost_dalsieho</span><span class="p">,</span> <span class="n">memo</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="n">k</span><span class="p">])</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a>        <span class="n">memo</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="n">q</span><span class="p">]</span> <span class="o">=</span> <span class="n">vypocitaj</span> <span class="n">napadnost</span> <span class="n">policajta</span> <span class="n">Policajt</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="n">s</span> <span class="n">prevlekom</span> <span class="n">Prevlek</span><span class="p">[</span><span class="n">q</span><span class="p">]</span> 
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a>                        <span class="o">+</span> <span class="n">min_napadnost_dalsieho</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Tu by sme si v zvlášť v tabulke ukladali, aký prevlek sme priraďovali ďalšiemu policajtovi (teda niekam by sme ukladali ešte index k). Tak by sme mohli spätne zostaviť kombinácie policajt-prevlek.</p>
+</details>
+</div>
+<p><a id="implication-dp.5"></a></p>
+<div class="admonition implication">
+<p class="admonition-title">Kabely</p>
+<h3 id="implication-dp.5">Kabely</h3>
+<p><img align="center" alt="Zadání" src="../../assets/exams/kabely.png" />  </p>
+<details class="proof">
+<summary>Řešení</summary>
+<p>Formálne sa problém pýta na to, ako dokážeme za čo najlacnejšiu cenu vyplniť vrcholy v strome tak, že žiadne susedné konektory nie sú rovnakého typu. </p>
+<p><br/>
+Pozrime sa na problém trochu zúžene. Majme nejaký vrchol <span class="arithmatex">\(V\)</span>, a priraďme mu konektor <span class="arithmatex">\(A\)</span>, a teda cenu uzla s konektorom <span class="arithmatex">\(A\)</span>. Ignorujme teraz na chvíľu vrchol <span class="arithmatex">\(V\)</span>. Ten bol spojený s vrcholmi <span class="arithmatex">\(U_1, U_2, ... U_d\)</span> kde <span class="arithmatex">\(d = deg(V)\)</span>. Vpodstate sme ale takto vytvorili <span class="arithmatex">\(d\)</span> postromov smerujúcich preč od <span class="arithmatex">\(v\)</span>, na ktorých môžeme riešiť rovnaký problém (teda hľadanie sady uzlov s najmenšou cenou), iba s podmienkou, že  <span class="arithmatex">\(konektor(U_1), konektor(U_2), ... konektor(U_d) \ne A\)</span>. Riešime teda rovnaký problém, ale už nie pre vrchol <span class="arithmatex">\(V\)</span>, ale pre <span class="arithmatex">\(U_1, U_2, ... U_d\)</span>. Celková cena bude potom </p>
+<div class="arithmatex">\[cena_A + cenapodstromu(U_1) + cenapodstromu(U_2) + ... + cenapodstromu(U_d)\]</div>
+<p><br/>
+Samozrejme je možné, že výberom konektoru <span class="arithmatex">\(A\)</span> sme sa cenovo zle obmedzili, a keby vyberieme napríklad konektor <span class="arithmatex">\(B\)</span>, tak dostaneme menšiu cenu. Hľadáme teda opäť minimum cez všetky konektory, ktoré môžeme vrcholu <span class="arithmatex">\(V\)</span> priradiť.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span>
+<span class="normal"><a href="#__codelineno-9-11">11</a></span>
+<span class="normal"><a href="#__codelineno-9-12">12</a></span>
+<span class="normal"><a href="#__codelineno-9-13">13</a></span>
+<span class="normal"><a href="#__codelineno-9-14">14</a></span>
+<span class="normal"><a href="#__codelineno-9-15">15</a></span>
+<span class="normal"><a href="#__codelineno-9-16">16</a></span>
+<span class="normal"><a href="#__codelineno-9-17">17</a></span>
+<span class="normal"><a href="#__codelineno-9-18">18</a></span>
+<span class="normal"><a href="#__codelineno-9-19">19</a></span>
+<span class="normal"><a href="#__codelineno-9-20">20</a></span>
+<span class="normal"><a href="#__codelineno-9-21">21</a></span>
+<span class="normal"><a href="#__codelineno-9-22">22</a></span>
+<span class="normal"><a href="#__codelineno-9-23">23</a></span>
+<span class="normal"><a href="#__codelineno-9-24">24</a></span>
+<span class="normal"><a href="#__codelineno-9-25">25</a></span>
+<span class="normal"><a href="#__codelineno-9-26">26</a></span>
+<span class="normal"><a href="#__codelineno-9-27">27</a></span>
+<span class="normal"><a href="#__codelineno-9-28">28</a></span>
+<span class="normal"><a href="#__codelineno-9-29">29</a></span>
+<span class="normal"><a href="#__codelineno-9-30">30</a></span>
+<span class="normal"><a href="#__codelineno-9-31">31</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="n">s</span> <span class="o">:=</span> <span class="n">strom</span><span class="p">,</span> <span class="n">v</span> <span class="n">tomto</span> <span class="n">pripade</span> <span class="n">ho</span> <span class="n">pre</span> <span class="n">jednoduchost</span> <span class="n">reprezentujem</span> <span class="n">tak</span><span class="p">,</span> <span class="n">ze</span> <span class="n">s</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="n">vrati</span> <span class="n">susedov</span> <span class="n">v</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="n">k</span> <span class="o">:=</span> <span class="n">pole</span> <span class="n">konektorov</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="n">c</span> <span class="o">:=</span> <span class="n">ceny</span> <span class="n">konektorov</span><span class="p">,</span> <span class="n">c</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="n">je</span> <span class="n">cena</span> <span class="n">konektoru</span> <span class="n">k</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="c1"># Predchodca je vrchol, z ktoreho volame toto rekurzivne volanie</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="c1"># Tomuto vrcholu sme uz priradili konektor, nechceme sa do neho vracat</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="c1"># Obmedzenie je typ konektoru, ktory sme pouzili na predchodcovi, ten teda nemozme priradit sebe</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="c1"># funkcia vracia zoznam priradeni konektorov vrcholom v podstrome, ktory teraz skumame</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="n">cena_podstromu</span><span class="p">(</span><span class="n">vrchol</span><span class="p">,</span> <span class="n">obmedzenie</span><span class="p">,</span> <span class="n">predchodca</span><span class="p">):</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9"></a>    <span class="c1"># ak je vrchol list, prirad mu najlacnejsi mozny konektor</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10"></a>    <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">vrchol</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">predchodca</span><span class="p">]:</span> 
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11"></a>        <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">najlacnejsi</span> <span class="o">!=</span> <span class="n">obmedzenie</span><span class="p">:</span> <span class="k">return</span> <span class="p">[</span><span class="n">vrchol</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="n">najlacnejsi</span><span class="p">]</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12"></a>        <span class="k">else</span> <span class="k">return</span> <span class="p">[</span><span class="n">vrchol</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="n">druhy_najlacnejsi</span><span class="p">]</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13"></a>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14"></a>    <span class="n">min_cena</span> <span class="o">=</span> <span class="n">inf</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15"></a>    <span class="n">min_konektor</span> <span class="o">=</span> <span class="n">undef</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16"></a>    <span class="n">min_konektory_ostatnych</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17"></a>    <span class="k">for</span> <span class="n">konektor</span> <span class="ow">in</span> <span class="p">{</span><span class="n">k</span> <span class="o">-</span> <span class="n">obmedzenie</span><span class="p">}:</span> <span class="c1"># skusme dat nasmu vrcholu vsetky konektory, okrem obmedzenia</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18"></a>        <span class="n">celkova_cena_v_pre_konektor_k</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="n">konektor</span><span class="p">]</span>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19"></a>        <span class="n">konektory_susedov</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20"></a>        <span class="k">for</span> <span class="n">sused</span> <span class="ow">in</span> <span class="p">{</span><span class="n">vrchol</span><span class="o">.</span><span class="n">susedia</span> <span class="o">-</span> <span class="n">predchodca</span><span class="p">}:</span> <span class="c1"># nechceme volat rekurziu pre predchodcu</span>
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21"></a>            <span class="n">zavolaj</span> <span class="n">cena_podstromu</span><span class="p">(</span><span class="n">sused</span><span class="p">,</span> <span class="n">konektor</span><span class="p">,</span> <span class="n">vrchol</span><span class="p">)</span>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22"></a>            <span class="n">cenu</span> <span class="n">pre</span> <span class="n">podstrom</span> <span class="n">od</span> <span class="n">suseda</span> <span class="n">pripocitaj</span> <span class="n">do</span> <span class="n">celkova_cena_v_pre_konektor_k</span>
+</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23"></a>            <span class="c1"># podstromy su disjunktne</span>
+</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24"></a>            <span class="n">konektory_susedov</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vratene</span> <span class="n">pole</span> <span class="n">konektorov</span> <span class="n">z</span> <span class="n">riadku</span> <span class="mi">21</span><span class="p">)</span> 
+</span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25"></a>
+</span><span id="__span-9-26"><a id="__codelineno-9-26" name="__codelineno-9-26"></a>        <span class="k">if</span> <span class="n">celkova_cena_v_pre_konektor_k</span> <span class="o">&lt;</span> <span class="n">min_cena</span><span class="p">:</span>
+</span><span id="__span-9-27"><a id="__codelineno-9-27" name="__codelineno-9-27"></a>            <span class="n">min_cena</span> <span class="o">=</span> <span class="n">celkova_cena_v_pre_konektor_k</span>
+</span><span id="__span-9-28"><a id="__codelineno-9-28" name="__codelineno-9-28"></a>            <span class="n">min_konektor</span> <span class="o">=</span> <span class="n">konektor</span>
+</span><span id="__span-9-29"><a id="__codelineno-9-29" name="__codelineno-9-29"></a>            <span class="n">min_konektory_ostatnych</span> <span class="o">=</span> <span class="n">konektory_susedov</span>
+</span><span id="__span-9-30"><a id="__codelineno-9-30" name="__codelineno-9-30"></a>
+</span><span id="__span-9-31"><a id="__codelineno-9-31" name="__codelineno-9-31"></a>    <span class="k">return</span> <span class="n">min_konektory_ostatnych</span> <span class="o">+</span> <span class="p">[</span><span class="n">vrchol</span><span class="p">:</span> <span class="n">min_konektor</span><span class="p">]</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Túto funkciu môžeme následne zavolať na ľubovoľný vrchol s obmedzením nastaveným na undefined. Tu by sa možno zišiel nejaký dôkaz, ja by som ale jednoducho povedal, že táto rekurzia skúsi všetky možné kombinácie, a teda aj tú optimálnu.</p>
+<p><br/>
+Keď už sa rozprávame o optimálnosti, asi by sa oplatilo použíť nejakú memoizáciu. Memoizačná tabuľka bude mať teraz 2 rozmery, jeden budú vrcholy, a druhý budú konektory. Do tabuľky si uložíme, aká je minimálna cena podstromu od daného vrcholu, ak má vrchol <strong>obmedzenie</strong> na daný konektor. </p>
+<p><br/>
+Tu je asi dôležité zmieniť, že pri volaní funkcie <code>cena_podstromu</code> na nejaký vrchol <span class="arithmatex">\(v\)</span> bude vždy <code>predchodca</code> rovnaký. Prečo? No medzi naším počiatočným vrcholom a vrcholom <span class="arithmatex">\(v\)</span> môže existovať iba jedna cesta (graf je strom), a teda predchodca na tejto ceste bude vždy rovnaký. <strong>Memoizačná tabuľka bude ale vyzerať rôzne podľa toho, z akého vrcholu začneme</strong>.</p>
+<p><br/>
+Časová zložitosť je tu ajtak trochu horšia, pre každé políčko v memoizačnej tabuľke totiž vykonávame <span class="arithmatex">\(k \cdot deg(v)\)</span> operácií, rádovo <span class="arithmatex">\(\mathcal{O}(k\cdot V(T))\)</span>. Vzhľadom na veľkosť tabuľky dostávame celkovú časovú zložitosť <span class="arithmatex">\(\mathcal{O}(k^2\cdot V(T)^2)\)</span></p>
+<p><br/>
+<em>Ešte jedna vec, nemusíme si v memoizačnej tabuľke predávať celý zoznam konektorov. Ak sa nad tým zamyslíme, pre každý vrchol si musíme iba pamätať, </em>aký typ konektoru mu priradiť, pre každé obmedzenie<em>, a zároveň cenu podstromu pri takomto obmedzení. Pri rekonštrukcií riešenia si pre iniciálny vrchol <span class="arithmatex">\(V\)</span> teda vyberieme konektor, ktorý vedie k najmenšej cene (najmenšie číslo v stĺpci vrcholu <span class="arithmatex">\(v\)</span>), a potom rekurzívne sa v tabuľke pozrieme na stĺpce všetkých susedných vrcholov, spýtame sa, aká je ich hodnota pri tomto obmedzení, a aký konektor pre tento vrchol vybrať (toto, ako som spomenul, ukladáme tiež do tabuľky), čo nám dovolí sa rekurzívne pozrieť na jeho susedov a spraviť to isté.</em></p>
+</details>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../Finty/" class="md-footer__link md-footer__link--next" aria-label="Next: Finty">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Finty
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/truepeak78/ag1-tests/" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/truepeak78/ag1-tests/issues/new/" target="_blank" rel="noopener" title="Report an Issue" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 12h-4v-2h4m0 6h-4v-2h4m6-6h-2.81a6 6 0 0 0-1.82-1.96L17 4.41 15.59 3l-2.17 2.17a6 6 0 0 0-2.83 0L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.footer", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
